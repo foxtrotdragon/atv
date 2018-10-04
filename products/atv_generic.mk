@@ -22,8 +22,8 @@ DEVICE_PACKAGE_OVERLAYS := \
     device/google/atv/sdk_overlay \
     development/sdk_overlay
 
-PRODUCT_COPY_FILES := \
-    device/google/atv/config.ini:config.ini
+#PRODUCT_COPY_FILES := \
+#    device/google/atv/config.ini:config.ini
 
 # Put en_US first in the list, so make it default.
 PRODUCT_LOCALES := en_US
