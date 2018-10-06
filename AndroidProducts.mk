@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/atv_x86.mk
+    $(LOCAL_DIR)/atv_x86_64.mk

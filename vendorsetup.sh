@@ -20,4 +20,6 @@
 # In particular, you can add lunch options with the add_lunch_combo
 # function: add_lunch_combo generic-eng
 
-add_lunch_combo atv_x86-userdebug
+add_lunch_combo atv_x86_64-userdebug
+add_lunch_combo atv_x86_64-user
+add_lunch_combo atv_x86_64-eng

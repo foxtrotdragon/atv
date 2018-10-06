@@ -14,28 +14,10 @@
 # limitations under the License.
 #
 
-#PRODUCT_PACKAGES := \
- #   bios.bin \
- #   vgabios-cirrus.bin
-
-$(call inherit-product, device/generic/atv/atv_generic.mk)
-$(call inherit-product, device/generic/x86_64/android_x86_64.mk)
-
-#include $(SRC_TARGET_DIR)/product/emulator.mk
+# TODO: separate out a common base for arm/x86 atv SDK build.
+$(call inherit-product, device/google/atv/products/sdk_atv_armv7.mk)
 
 # Overrides
-PRODUCT_NAME := atv_x86_64
-PRODUCT_DEVICE := x86_64
-PRODUCT_BRAND := Android-x86
-
-
-# from kyvaith
-
-PRODUCT_MODEL := Fugu
-PRODUCT_MANUFACTURER := ASUS
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.manufacturer=Asus \
-    ro.product.model=Nexus \Player \
-    ro.nrdp.modelgroup=NEXUSPLAYERFUGU
-    
+PRODUCT_NAME := sdk_atv_x86
+PRODUCT_DEVICE := generic_x86
+PRODUCT_BRAND := google
