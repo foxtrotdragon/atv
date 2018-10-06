@@ -16,6 +16,8 @@
 
 PRODUCT_IS_ATV := true
 
+PRODUCT_CHARACTERISTICS := tv
+
 PRODUCT_PACKAGES := \
     TvProvider \
     TvSettings \
@@ -26,6 +28,9 @@ PRODUCT_COPY_FILES := \
 
 DEVICE_PACKAGE_OVERLAYS := \
     device/generic/atv/overlay
+    
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/sep_policy.conf:system/etc/security/sep_policy.conf
 
 # From build/target/product/core_base.mk
 PRODUCT_PACKAGES += \
@@ -102,16 +107,39 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # has the pre-installed Live Channels app. This is necessary for the Play Store
 # to identify the compatible devices that can install later updates of the app.
 
-PRODUCT_PACKAGES += TV
+
+#keymaster HAL
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl
     
+# Memtrack HAL
+PRODUCT_PACKAGES += \
+    android.hardware.memtrack@1.0-impl
+
+# Power HAL
+PRODUCT_PACKAGES += \
+	android.hardware.power@1.0-impl \
+
+PRODUCT_PACKAGES += \
+	android.hardware.drm@1.0-impl \
+	
 
 
+# Hdmi CEC: Fugu works as a playback device (4).
+PRODUCT_PROPERTY_OVERRIDES += ro.hdmi.device_type=4
+
+# Hdmi CEC: Disable 'Set Menu Language' feature.
+PRODUCT_PROPERTY_OVERRIDES += ro.hdmi.set_menu_language=false
+
+# Boot Animation
+PRODUCT_COPY_FILES += \
+    device/asus/fugu/bootanimation-580-256col.zip:system/media/bootanimation.zip
 
 PRODUCT_COPY_FILES += \
    device/generic/atv/permissions/com.google.android.tv.installed.xml:system/etc/permissions/com.google.android.tv.installed.xml
 
 # To enable access to /dev/dvb*
-BOARD_SEPOLICY_DIRS += device/google/atv/sepolicy
+#BOARD_SEPOLICY_DIRS += device/google/atv/sepolicy
 
 # This property defines the tutorial content for this device
 PRODUCT_PROPERTY_OVERRIDES += \

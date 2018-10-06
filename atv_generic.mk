@@ -21,6 +21,8 @@ PRODUCT_PACKAGES := \
 DEVICE_PACKAGE_OVERLAYS := \
     device/generic/atv/sdk_overlay \
     development/sdk_overlay
+    
+
 
 #PRODUCT_COPY_FILES := \
 #    device/generic/atv/config.ini:config.ini

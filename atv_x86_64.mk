@@ -39,3 +39,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.model=Nexus \Player \
     ro.nrdp.modelgroup=NEXUSPLAYERFUGU
     
+$(call inherit-product-if-exists, vendor/asus/fugu/device-vendor.mk)
+    
+    
+# Gapps
+
+#GAPPS_VARIANT := tvstock
+
+#$(call inherit-product-if-exists, vendor/opengapps/build/opengapps-packages.mk)
+
+#GAPPS_FORCE_PACKAGE_OVERRIDES := true
+
+

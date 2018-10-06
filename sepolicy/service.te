@@ -1,2 +1,1 @@
-# system_server_services needed on atv
-type tv_remote_service, system_server_service, service_manager_type;
+type tv_control_service, system_server_service, service_manager_type;
